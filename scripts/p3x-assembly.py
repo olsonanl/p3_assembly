@@ -1240,7 +1240,7 @@ def main():
     if args.normalize:
         LOG.write(f"args.normalize is set\n")
         for read_set in short_reads:
-            read_set.normalize_read_depth(target_depth = args.target_depth)
+            read_set.normalize_read_depth(target_depth = int(args.target_depth/len(read_list)))
 
     if args.filtlong and len(long_reads) and args.target_depth:
         LOG.write(f"args.filtlong is set\n")
@@ -1251,7 +1251,7 @@ def main():
                 LOG.write(f"selected illumina reference for filtlong: {illumina_reference}\n")
                 break
         for read_set in long_reads:
-            target_bases = args.genome_size * args.target_depth
+            target_bases = int(args.genome_size * args.target_depth / len(read_list))
             if target_bases < read_set.num_bases:
                 read_set.filter_long_reads(target_bases, illumina_reference)
 

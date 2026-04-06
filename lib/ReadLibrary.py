@@ -235,6 +235,8 @@ class ReadLibrary:
             for i, read_file in enumerate(trimReads):
                 new_read_file = os.path.basename(read_file)
                 shutil.move(read_file, new_read_file)
+
+                ReadLibrary.LOG.write(f"i={i} file={new_read_file}, size={os.path.getsize(new_read_file)}, len(self.file_size)={len(self.file_size)}\n")
                 self.file_size[i] = os.path.getsize(new_read_file)
                 self.files[i] = new_read_file
 

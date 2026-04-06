@@ -66,8 +66,8 @@ sub preflight
     my $ws = $app->workspace();
 
 
-	$readset = Bio::KBase::AppService::ReadSet->create_from_asssembly_params($params);
-    };
+	my $readset = Bio::KBase::AppService::ReadSet->create_from_asssembly_params($params);
+    
     if ($@)
     {
 	die "Error parsing assembly parameters: $@";
