@@ -1,0 +1,19 @@
+{
+  "genome_size": 5000000,
+  "trim": "1",
+  "recipe": "spades",
+  "target_depth": 200,
+  "pilon_iter": 2,
+  "output_path": "/olson@patricbrc.org/PATRIC-QA/applications/App-GenomeAssembly2",
+  "srr_ids": [
+    "ERR7916233"
+  ],
+  "min_contig_cov": 5,
+  "normalize": "1",
+  "debug": 0,
+  "max_bases": 10000000000,
+  "min_contig_len": 300,
+  "racon_iter": 2,
+  "output_file": "workshop_err7916233_spades",
+  "filtlong": "1"
+}
